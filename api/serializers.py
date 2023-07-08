@@ -439,15 +439,15 @@ class CustomEssayResponseSerializer(serializers.ModelSerializer):
 
 class AnswerSerializerSpecific(serializers.ModelSerializer):
 
-        class Meta:
-            model = Answer
-            fields = ['id', 'label', 'right']
+    class Meta:
+        model = Answer
+        fields = ['id', 'label', 'right']
 
 class QuestionSerializerSpecific(serializers.ModelSerializer):
 
     class Meta:
         model = Question
-        include = ['answer']
+        fields = ['answer']
 
 #serializador que retornara las respuestas de las preguntas
 class QuestionAnswerSerializer(QuestionSerializerSpecific): #Heredar de QuestionSerializer
