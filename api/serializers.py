@@ -441,10 +441,16 @@ class AnswerSerializerSpecific(serializers.ModelSerializer):
 
         class Meta:
             model = Answer
-            exclude = [*generic_fields, 'users', 'essay', 'right', 'questions']
+            fields = ['id', 'label', 'right']
+
+class QuestionSerializerSpecific(serializers.ModelSerializer):
+
+    class Meta:
+        model = Question
+        include = ['answer']
 
 #serializador que retornara las respuestas de las preguntas
-class QuestionAnswerSerializer(QuestionSerializer): #Heredar de QuestionSerializer
+class QuestionAnswerSerializer(QuestionSerializerSpecific): #Heredar de QuestionSerializer
 
         answer = AnswerSerializerSpecific(many=True, read_only=True) #instancia de las respuestas
         #debe llamare igual que el related-name de la realcion 
