@@ -454,10 +454,10 @@ class QuestionAnswerSerializer(QuestionSerializerSpecific): #Heredar de Question
 
         answer = AnswerSerializerSpecific(many=True, read_only=True) #instancia de las respuestas
         #debe llamare igual que el related-name de la realcion 
-        def to_representation(self, instance: Question):
-            data = super().to_representation(instance)#usara el metodo to respresentation de la clase QuestionSerializer para la instacia del modelo questions
-            essay = instance.essays
-            data['essay'] = essay.id
-            return data
+        #def to_representation(self, instance: Question):
+          #  data = super().to_representation(instance)#usara el metodo to respresentation de la clase QuestionSerializer para la instacia del modelo questions
+         #   essay = instance.essays
+           # data['essay'] = essay.id
+            #return data
 
 ####################################
