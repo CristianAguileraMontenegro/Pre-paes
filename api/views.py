@@ -208,7 +208,7 @@ class CustomEssayResponseView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = CustomEssayResponseSerializer
 
 #######################################################################################
-class questionAnswers(generics.ListAPIView):
+class questionAnswers(generics.RetrieveAPIView):
     serializer_class = QuestionAnswerSerializer
     filter_backends = [DjangoFilterBackend]
     
