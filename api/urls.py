@@ -17,6 +17,7 @@ urlpatterns = [
     re_path('api/token-refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),#Endpoint para refrescar el token
 
     re_path(r'^essays/list/all/$', views.EssayList.as_view()),#Endpoint para consultar todos los tipos de ensayos
+    re_path(r'^essays/list/all/key/$', views.EssayListAll.as_view()),#Endpoint para consultar solo los id de los ensayos
     re_path(r'^essays/create/$', views.EssayCreate.as_view()),#Endpoint para crear un ensayo
     re_path(r'^essays/(?P<pk>[0-9]+)/$', views.EssayRetrieveUpdateDestroy.as_view()),#Endpoint para consultar, eliminar, actualizar un ensayo específico
 

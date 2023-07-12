@@ -110,6 +110,9 @@ class EssayList(generics.ListAPIView):
     queryset = Essay.objects.filter().order_by('pk')  # Consulta para obtener los ensayos ordenados por clave primaria
     serializer_class = EssaySerializer  # Clase serializadora utilizada
 
+class EssayListAll(generics.ListAPIView): #12-07
+    queryset = Essay.objects.all()  # Consulta para obtener los ensayos ordenados por clave primaria
+    serializer_class = EssaySerializerAllId  # Clase serializadora utilizada
 
 class EssayCreate(generics.CreateAPIView):
     queryset = Essay.objects.filter().order_by('pk')  # Consulta para obtener los ensayos ordenados por clave primaria
